@@ -1,11 +1,18 @@
 function computerplay() {
     var a = Math.floor(Math.random() * 3)
-    if (a == 0)
+    if (a == 0) {
+
         console.log("Computer Chooses Rock");
-    else if (a == 1)
+        document.getElementById("text").innerHTML = "Computer Chooses Rock";
+    }
+    else if (a == 1) {
         console.log("Computer Chooses Paper");
-    else
+        document.getElementById("text").innerHTML = "Computer Chooses Paper";
+    }
+    else {
         console.log("Computer CHooses Scissors");
+        document.getElementById("text").innerHTML = "Computer Chooses Scissors";
+    }
     return a;
 }
 let click = 0;
@@ -17,17 +24,23 @@ function getPlayerNo() {
         PlayerNo = 1;
         click++;
         let cp;
-        if (click < 5) {
+        if (click <= 5) {
             cp = computerplay();
             switch (playround(cp, PlayerNo)) {
                 case 1:
-                    document.getElementById("score").innerHTML = ++count
+                    {
+                        document.getElementById("score").innerHTML = ++count;
+                        if (count >= 3)
+                            document.getElementById("res").innerHTML = "You Win!!!";
+                    }
             }
         }
 
-
-        else
+        else {
             document.getElementById("score").innerHTML = "END";
+            if (count < 3)
+                document.getElementById("res").innerHTML = "You Lose";
+        }
 
 
     };
@@ -37,17 +50,24 @@ function getPlayerNo() {
         PlayerNo = 0;
         click++;
         let cp;
-        if (click < 5) {
+        if (click <= 5) {
             cp = computerplay();
             switch (playround(cp, PlayerNo)) {
                 case 1:
-                    document.getElementById("score").innerHTML = ++count
+                    {
+                        document.getElementById("score").innerHTML = ++count;
+                        if (count >= 3)
+                            document.getElementById("res").innerHTML = "You Win!!!";
+                    }
             }
         }
 
 
-        else
+        else {
             document.getElementById("score").innerHTML = "END";
+            if (count < 3)
+                document.getElementById("res").innerHTML = "You Lose";
+        }
 
 
     };
@@ -56,17 +76,24 @@ function getPlayerNo() {
         PlayerNo = 2;
         click++;
         let cp;
-        if (click < 5) {
+        if (click <= 5) {
             cp = computerplay();
             switch (playround(cp, PlayerNo)) {
                 case 1:
-                    document.getElementById("score").innerHTML = ++count
+                    {
+                        document.getElementById("score").innerHTML = ++count;
+                        if (count >= 3)
+                            document.getElementById("res").innerHTML = "You Win!!!";
+                    }
             }
         }
 
 
-        else
+        else {
             document.getElementById("score").innerHTML = "END";
+            if (count < 3)
+                document.getElementById("res").innerHTML = "You Lose";
+        }
 
 
     };
@@ -93,11 +120,17 @@ function playround(cp, ppno) {
     }
 }
 let count = 0;
+
 function game() {
     let i;
 
     getPlayerNo();
 
-    console.log(count);
+
 }
+
 game();
+
+
+
+
