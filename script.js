@@ -16,41 +16,61 @@ function getPlayerNo() {
     document.getElementById("Img1").onclick = function () {
         PlayerNo = 1;
         click++;
-        let cp = computerplay();
-        if (click == 5)
-            alert("END");
-        switch (playround(cp, PlayerNo)) {
-            case 1:
-                document.getElementById("score").innerHTML = ++count;
-
+        let cp;
+        if (click < 5) {
+            cp = computerplay();
+            switch (playround(cp, PlayerNo)) {
+                case 1:
+                    document.getElementById("score").innerHTML = ++count
+            }
         }
+
+
+        else
+            document.getElementById("score").innerHTML = "END";
+
+
     };
 
 
     const play = document.getElementById("Img2").onclick = function () {
         PlayerNo = 0;
         click++;
-        let cp = computerplay();
-        if (click == 5)
-            alert("END");
-        switch (playround(cp, PlayerNo)) {
-            case 1:
-                document.getElementById("score").innerHTML = ++count;
+        let cp;
+        if (click < 5) {
+            cp = computerplay();
+            switch (playround(cp, PlayerNo)) {
+                case 1:
+                    document.getElementById("score").innerHTML = ++count
+            }
         }
+
+
+        else
+            document.getElementById("score").innerHTML = "END";
+
+
     };
 
     document.getElementById("Img3").onclick = function () {
         PlayerNo = 2;
         click++;
-        if (click == 5)
-            alert("END");
-
-        let cp = computerplay();
-        switch (playround(cp, PlayerNo)) {
-            case 1:
-                document.getElementById("score").innerHTML = ++count;
+        let cp;
+        if (click < 5) {
+            cp = computerplay();
+            switch (playround(cp, PlayerNo)) {
+                case 1:
+                    document.getElementById("score").innerHTML = ++count
+            }
         }
+
+
+        else
+            document.getElementById("score").innerHTML = "END";
+
+
     };
+
 
 
 }
@@ -75,9 +95,9 @@ function playround(cp, ppno) {
 let count = 0;
 function game() {
     let i;
-    for (i = 0; i < 5; i++) {
-        let player = getPlayerNo();
-    }
+
+    getPlayerNo();
+
     console.log(count);
 }
 game();
