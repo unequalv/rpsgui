@@ -10,14 +10,18 @@ function computerplay() {
 }
 let click = 0;
 function getPlayerNo() {
+
+
     let PlayerNo;
     document.getElementById("Img1").onclick = function () {
         PlayerNo = 1;
         click++;
         let cp = computerplay();
+        if (click == 5)
+            alert("END");
         switch (playround(cp, PlayerNo)) {
             case 1:
-                count++;
+                document.getElementById("score").innerHTML = ++count;
 
         }
     };
@@ -28,10 +32,10 @@ function getPlayerNo() {
         click++;
         let cp = computerplay();
         if (click == 5)
-            Img2.stopPropagation();
+            alert("END");
         switch (playround(cp, PlayerNo)) {
             case 1:
-                count++;
+                document.getElementById("score").innerHTML = ++count;
         }
     };
 
@@ -39,11 +43,12 @@ function getPlayerNo() {
         PlayerNo = 2;
         click++;
         if (click == 5)
-            Img3.stopPropagation();
+            alert("END");
+
         let cp = computerplay();
         switch (playround(cp, PlayerNo)) {
             case 1:
-                count++;
+                document.getElementById("score").innerHTML = ++count;
         }
     };
 
